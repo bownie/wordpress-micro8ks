@@ -10,6 +10,18 @@ https://hub.docker.com/\_/wordpress
 
 Using version 5.7.1 and mysql 5.7
 
+## Enable storage for our PVs
+
+  $ microk8s enable storage
+
+
+## Enable DNS
+
+  $ microk8s enable dns
+
+Is this required for service discovery?   Need to retest.
+
+
 ## Get the kubernetes dashboard:
 
 https://microk8s.io/docs/addon-dashboard
@@ -29,7 +41,6 @@ Then you can go here to access the dashboard and check the status of your microk
   https://127.0.0.1:10443
 
 Don't forget you need a token to login.  You can get that from here:
-
 
 
 ## Deploying your solution
