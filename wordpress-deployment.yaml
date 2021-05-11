@@ -59,6 +59,8 @@ spec:
             secretKeyRef:
               name: mysql-pass
               key: password
+        - name: PHP_DEFAULT_UPLOAD_MAX_FILESIZE
+          value: 80M
         - name: WORDPRESS_CONFIG_EXTRA
           value: |
                # Require SSL for admin and logins
