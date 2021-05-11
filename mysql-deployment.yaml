@@ -45,9 +45,18 @@ spec:
         tier: mysql
     spec:
       containers:
-      - image: mysql:5.6
+      - image: mysql:5.7.34
         name: mysql
         env:
+        - name: MYSQL_DATABASE
+          value: xyglowp
+        - name: MYSQL_USER
+          value: xyglowp
+        - name: MYSQL_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-pass
+              key: password
         - name: MYSQL_ROOT_PASSWORD
           valueFrom:
             secretKeyRef:

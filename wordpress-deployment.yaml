@@ -45,11 +45,15 @@ spec:
         tier: frontend
     spec:
       containers:
-      - image: wordpress:4.8-apache
+      - image: wordpress:5.7.1-php7.4-apache
         name: wordpress
         env:
         - name: WORDPRESS_DB_HOST
           value: wordpress-mysql
+        - name: WORDPRESS_DB_USER
+          value: xyglowp
+        - name: WORDPRESS_DB_NAME
+          value: xyglowp
         - name: WORDPRESS_DB_PASSWORD
           valueFrom:
             secretKeyRef:
