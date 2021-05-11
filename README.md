@@ -72,6 +72,14 @@ Then you can go to here to test:
 
 http://127.0.0.1:1080
 
+# Next steps
+
+Looking at kustomize in more detail particularly when it comes to kustomize:
+
+https://kubectl.docs.kubernetes.io/guides/introduction/kustomize
+
+
+
 # Debugging
 
 Get the pods:
