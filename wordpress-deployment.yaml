@@ -23,7 +23,7 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 3Gi
+      storage: 15Gi
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -45,7 +45,7 @@ spec:
         tier: frontend
     spec:
       containers:
-      - image: wordpress:5.7.1-php7.4-apache
+      - image: xygloid/wordpress:latest
         name: wordpress
         env:
         - name: WORDPRESS_DB_HOST
@@ -69,6 +69,17 @@ spec:
                define( 'DISALLOW_FILE_MODS', false );
                # Disable the plugin and theme editor
                define( 'DISALLOW_FILE_EDIT', false );
+               # Multisite
+               define( 'WP_ALLOW_MULTISITE', true );
+               define( 'MULTISITE', true);
+               define( 'SUBDOMAIN_INSTALL', false);
+               define( 'DOMAIN_CURRENT_SITE', '127.0.0.1:1080');
+               define( 'PATH_CURRENT_SITE', '/');
+               define( 'SITE_ID_CURRENT_SITE', 1);
+               define( 'BLOG_ID_CURRENT_SITE', 1);
+               define( 'WP_MEMORY_LIMIT', '256M' );
+               define( 'WP_MAX_MEMORY_LIMIT', '256M');
+               set_time_limit (60);
         ports:
         - containerPort: 80
           name: wordpress
