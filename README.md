@@ -1,10 +1,10 @@
 ## Wordpress PV with microk8s
 
-Using this as a basis for a starter microk8s wordpress setup including some debugging knowledge. Using this as a basis:
+Using this tutorial as a basis for a starter microk8s wordpress setup:
 
 https://kubernetes.io/docs/tutorials/stateful-application/mysql-wordpress-persistent-volume/
 
-We want to achieve this functionality:
+We want to achieve the functionality we see here:
 
 https://github.com/verize/kubernetes-wordpress-ingress
 
